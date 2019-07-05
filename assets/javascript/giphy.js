@@ -25,14 +25,13 @@ $("#topic-buttons").on("click", ".topics", function() {
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userClick + "&api_key=9DAFL0tRH2jAJGtMuPuZAgEo2Dfqix87&limit=9&rating=G";
 
     $.ajax({
-        url:queryURL,
+        url: queryURL,
         method: "GET"
     }).then(function(response) {
         var results = response.data
 
         for (var i = 0; i < response.data.length; i++) {
-            var img = $("<img src=" + response.data[i].
-            s.fixed_width_still.url + ">");
+            var img = $("<img src=" + response.data[i].images.fixed_width_still.url + ">");
 
             $("#gif-view").append(img);
             var p = $("<p>").text("Rating: " + results[i].rating);
