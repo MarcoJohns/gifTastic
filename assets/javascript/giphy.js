@@ -31,7 +31,8 @@ $("#topic-buttons").on("click", ".topics", function() {
         var results = response.data
 
         for (var i = 0; i < response.data.length; i++) {
-            var img = $("<img src=" + response.data[i].images.fixed_width_still.url + ">");
+            var img = $("<img src=" + response.data[i].
+            s.fixed_width_still.url + ">");
 
             $("#gif-view").append(img);
             var p = $("<p>").text("Rating: " + results[i].rating);
@@ -72,7 +73,7 @@ $("add-giphy").on("click", function(event) {
 
     var newSearch = $("movie-input").val().trim()
 
-    topics.push(newsearch);
+    topics.push(newSearch);
 
     topicButtons();
 
